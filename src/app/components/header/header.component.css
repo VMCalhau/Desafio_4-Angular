@@ -1,0 +1,7 @@
+.container-fluid > a > img {
+    max-width: 40px;
+}
+
+.navbar-brand {
+    text-align: center;
+}

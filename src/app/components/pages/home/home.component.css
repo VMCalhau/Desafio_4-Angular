@@ -1,0 +1,15 @@
+.container > img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.informacoes {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.informacoes > h2 {
+    margin: 1rem 0;
+}
