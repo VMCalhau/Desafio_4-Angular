@@ -1,0 +1,24 @@
+.camposConversao {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 1rem;
+}
+
+.dropdown {
+    margin: 0 1rem;
+}
+
+.informacoesConversao {
+    margin: 2rem 1rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .camposConversao {
+        flex-direction: column;
+    }
+}
