@@ -11,7 +11,8 @@
 }
 
 .informacoesConversao {
-    margin: 2rem 1rem;
+    max-width: 800px;
+    margin: 2rem auto;
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
@@ -20,5 +21,9 @@
 @media screen and (max-width: 768px) {
     .camposConversao {
         flex-direction: column;
+    }
+
+    .informacoesConversao {
+        margin: 2rem 1rem;
     }
 }

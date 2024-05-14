@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/">
+        <a class="navbar-brand" routerLink="/"  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
             <img src="../../../assets/dollar-512.png" class="d-inline-block align-center">
             Conversor de Moedas
         </a>
@@ -9,10 +9,18 @@
         </button>
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a routerLink="/" class="nav-link">Home</a></li>
-                <li class="nav-item"><a routerLink="/lista" class="nav-link">Listar Moedas</a></li>
-                <li class="nav-item"><a routerLink="/converter" class="nav-link">Converter</a></li>
-                <li class="nav-item"><a routerLink="/historico" class="nav-link">Histórico</a></li>
+                <li class="nav-item">
+                    <a routerLink="/" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/lista" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Listar Moedas</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/converter" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Converter</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/historico" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Histórico</a>
+                </li>
             </ul>
         </div>
     </div>
