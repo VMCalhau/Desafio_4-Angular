@@ -6,8 +6,7 @@
     color: #1b1b1b;
 }
 
-html, body {
-    height: 100%;
+body {
     background-color: #ebebeb;
 }
 
@@ -19,5 +18,3 @@ a {
 a:hover {
     color: #0091ad;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

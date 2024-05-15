@@ -1,16 +1,28 @@
 <div class="container">
-    <table mat-table [dataSource]="listaMoedas" class="mat-elevation-z8">
-        <ng-container matColumnDef="codigo">
-            <th mat-header-cell *matHeaderCellDef> Código </th>
-            <td mat-cell *matCellDef="let moeda"> {{ moeda.codigo }} </td>
-        </ng-container>
-    
-        <ng-container matColumnDef="nome">
-            <th mat-header-cell *matHeaderCellDef> Descrição </th>
-            <td mat-cell *matCellDef="let moeda"> {{ moeda.nome }} </td>
-        </ng-container>
-    
-        <tr mat-header-row *matHeaderRowDef="colunasTabela"></tr>
-        <tr mat-row *matRowDef="let row; columns: colunasTabela;"></tr>
-    </table>
+    <div class="filtro">
+        <mat-form-field>
+            <mat-label>Filtro</mat-label>
+            <input type="text" matInput [(ngModel)]="valorFiltro" (ngModelChange)="onChangeFilter()">
+        </mat-form-field>
+    </div>
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="codigo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
+                <td mat-cell *matCellDef="let moeda"> {{ moeda.codigo }} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição </th>
+                <td mat-cell *matCellDef="let moeda"> {{ moeda.nome }} </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="colunasTabela"></tr>
+            <tr mat-row *matRowDef="let row; columns: colunasTabela;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                     showFirstLastButtons
+                     aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
 </div>
