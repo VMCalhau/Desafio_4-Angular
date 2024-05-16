@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+}
+
+th {
+    user-select: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.container > * {
+    overflow-x: auto;
+}
