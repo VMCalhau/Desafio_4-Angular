@@ -8,6 +8,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
+import { AlertDialogComponent } from '../../alert-dialog/alert-dialog.component';
+import { Observable, lastValueFrom } from 'rxjs';
 
 
 @Component({
@@ -25,7 +28,7 @@ export class HistoricoComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private storageService: StorageService, private changeDetector: ChangeDetectorRef) {
+  constructor(private storageService: StorageService, private changeDetector: ChangeDetectorRef, public dialog: MatDialog) {
     afterNextRender (() => {
       this._updateTable();
       this.dataSource.paginator = this.paginator;
@@ -47,8 +50,15 @@ export class HistoricoComponent {
     return new Date(data).toLocaleTimeString().substring(0, 5);
   }
 
-  excluir(id: number): void {
-    this.storageService.removeItem(id);
-    this._updateTable();
+  private _openDialog(): Observable<boolean> {
+    const dialogRef = this.dialog.open(AlertDialogComponent);
+    return dialogRef.afterClosed();
   }
+
+  async excluir(id: number): Promise<void> {
+      if (await lastValueFrom(this._openDialog())) {
+        this.storageService.removeItem(id);
+        this._updateTable();
+      }
+    }
 }

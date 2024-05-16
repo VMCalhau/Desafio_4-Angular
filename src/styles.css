@@ -5,14 +5,16 @@
     box-sizing: border-box;
     color: #1b1b1b;
 }
-
 body {
     background-color: #ebebeb;
 }
-
 a {
     text-decoration: none;
     transition: .3s;
+}
+
+.mat-mdc-dialog-container {
+    --mdc-dialog-container-shape: 20px;
 }
 
 a:hover {

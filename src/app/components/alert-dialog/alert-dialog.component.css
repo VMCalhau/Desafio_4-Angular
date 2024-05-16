@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    padding: 1rem 5%;
+    border-radius: 20px;
+}
+:host:not(.container > *) {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.container > h2 {
+    color: #000;
+}
+.container > p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.botao {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+}
+#excluir {
+    background-color: #eb3737;
+    color: white;
+}
+#cancelar {
+    background-color: #d6d5d5;
+}
+
+.botao:hover {
+    transform: scale(1.05);
+}
