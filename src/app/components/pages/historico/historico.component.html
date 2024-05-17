@@ -39,19 +39,20 @@
             <ng-container matColumnDef="acoes">
                 <th mat-header-cell *matHeaderCellDef>Ações</th>
                 <td mat-cell *matCellDef="let row">
-                    <button mat-mini-fab color="" (click)="excluir(row.id)">
+                    <button mat-icon-button color="" (click)="excluir(row.id)">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </td>
             </ng-container>
         
             <tr mat-header-row *matHeaderRowDef="colunasTabela"></tr>
-            <tr mat-row *matRowDef="let row; columns: colunasTabela;"></tr>
+            <tr mat-row *matRowDef="let row; columns: colunasTabela;" [ngClass]="{'alto-valor': row.altoValor}"></tr>
         </table>
         <mat-paginator [pageSizeOptions]="[5, 10, 20]"
                      showFirstLastButtons
                      aria-label="Selecione a página da histórico de conversões">
         </mat-paginator>
     </div>
+    <p class="info-alto">*Valores em negrito: acima de 500 USD</p>
 </div>
 

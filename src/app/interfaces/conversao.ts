@@ -8,4 +8,5 @@ export interface Conversao {
     valorConverter: number;
     resultado: number;
     taxa: number;
+    altoValor: boolean;
 }

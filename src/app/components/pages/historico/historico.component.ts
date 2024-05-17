@@ -11,12 +11,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { AlertDialogComponent } from '../../alert-dialog/alert-dialog.component';
 import { Observable, lastValueFrom } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-historico',
   standalone: true,
-  imports: [MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, FormsModule, MatIconModule, MatButtonModule],
+  imports: [MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, FormsModule, MatIconModule, MatButtonModule, CommonModule],
   templateUrl: './historico.component.html',
   styleUrl: './historico.component.css'
 })

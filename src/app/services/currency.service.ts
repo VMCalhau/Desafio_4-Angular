@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { Observable, map } from 'rxjs';
 import { Moeda } from '../interfaces/moeda';
 import { HttpClient } from '@angular/common/http';
+import { ResultadoConversao } from '../interfaces/resultado-conversao';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class CurrencyService {
     );
   }
 
-  getPairAmount(codOrigem: string, codDestino: string, valor: number): Observable<any> {
+  getPairAmount(codOrigem: string, codDestino: string, valor: number): Observable<ResultadoConversao> {
     return this.httpClient.get<any>(`${this._apiUrl}/${this._apiKey}/pair/${codOrigem}/${codDestino}/${valor}`).pipe(
       map(response => ({
         taxa: response.conversion_rate,

@@ -14,3 +14,11 @@ th {
 .container > * {
     overflow-x: auto;
 }
+
+.alto-valor {
+    font-weight: bold;
+}
+.info-alto {
+    font-weight: bold;
+    margin-top: 1rem;
+}
